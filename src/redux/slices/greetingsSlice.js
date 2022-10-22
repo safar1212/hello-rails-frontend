@@ -1,7 +1,7 @@
-import axios from "axios";
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from 'axios';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const BASE_URL = "http://localhost:3000/api/v1/greetings";
+const BASE_URL = 'http://localhost:3000/api/v1/greetings';
 const http = axios.create({ baseURL: BASE_URL });
 
 const initialState = {
@@ -11,15 +11,15 @@ const initialState = {
 };
 
 export const fetchGreetingsThunk = createAsyncThunk(
-  "greetings/fetchGreetings",
+  'greetings/fetchGreetings',
   async () => {
     const { data } = await http.get();
     return data.greeting;
-  }
+  },
 );
 
 const greetingsSlice = createSlice({
-  name: "greetings",
+  name: 'greetings',
   initialState,
   extraReducers: {
     [fetchGreetingsThunk.fulfilled]: (state, action) => {

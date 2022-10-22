@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Hello Reacto</h1>
+        <h1>Hello React</h1>
         <NaVBar />
         <Routes>
           <Route exact path="/*" element={<Home />} />
@@ -16,6 +16,7 @@ function App() {
         </Routes>
       </header>
     </div>
-  )};
+  );
+}
 
-  export default App;
+export default App;
